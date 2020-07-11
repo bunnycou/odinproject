@@ -39,21 +39,6 @@ const snakeCase = function(x) {
                 }
             }
         }
-
-        
-
-        //for Array from a
-        // if (abc.includes(x)) {
-        //     ans += x;
-        // } else if (ABC.includes(x)) {
-        //     if (Array.from(ans)[Array.from(ans).length - 1] == "_") {
-        //         ans += x.toLowerCase();
-        //     } else {
-        //         ans += `_${x.toLowerCase()}`;
-        //     }
-        // } else if (x == " ") {
-        //     ans += "_"
-        // }
     }
     
 }
