@@ -1,0 +1,1 @@
+This is a blank HTML page with inline JavaScript to play Rock Paper Scissors
