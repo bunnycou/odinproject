@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skeleton HTML</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <h1>
+    THE TITLE OF YOUR WEBPAGE
+  </h1>
+  <div id="container"></div>
+
+  <script>
+    // Your JavaScript goes here!
+    setTimeout(() => {
+      const container = document.querySelector('#container');
+
+      const content = document.createElement('div');
+      content.classList.add('content');
+      content.textContent = 'This is the glorious text-content!';
+
+      const p = document.createElement('p');
+      p.style.color = 'red';
+      p.textContent = "Hey I'm red!";
+
+      const hhh = document.createElement('h3');
+      hhh.style.color = 'blue';
+      hhh.textContent = "I'm a blue h3!";
+
+      const newdiv = document.createElement('div');
+      newdiv.style.backgroundColor = 'pink';
+      newdiv.style.borderColor = 'black';
+      newdiv.style.border = '6px solid';
+
+      const h = document.createElement('h1');
+      h.textContent = "I'm in a div";
+
+      const pp = document.createElement('p');
+      pp.textContent = 'ME TOO!'
+
+      newdiv.appendChild(h);
+      newdiv.appendChild(pp);
+
+      container.appendChild(content);
+      container.appendChild(p);
+      container.appendChild(hhh);
+      container.appendChild(newdiv);
+    }, 2000)
+
+    
+  </script>
+
+  <button onclick="alert('Hello World')">Click Me</button>
+  </br>
+  <button id="btn">Click Me</button>
+
+</body>
+</html>
