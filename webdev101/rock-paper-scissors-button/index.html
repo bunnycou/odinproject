@@ -3,70 +3,22 @@
     <head>
         <title>JS RPS</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <script>
-            // declare variables
-            let choices = ["rock", "paper", "scissors"]
-            let playerChoice = ""
-            let computerChoice = ""
-            let playerScore = 0
-            let computerScore = 0
 
-            //function for getting player choice
-            function playerPlay(playerSelection) {
-                playerSelection = playerSelection.toLowerCase()
-                if ((playerSelection == "r") || (playerSelection == "p") || (playerSelection == "s")) {
-                    if (playerSelection == "r") {
-                        playerSelection = "rock"
-                    } else if (playerSelection == "p") {
-                        playerSelection = "paper"
-                    } else if (playerSelection == "s") {
-                        playerSelection = "scissors"
-                    } 
-                    //check player choice to make sure it is valid
-                } else if ((playerSelection != "rock") || (playerSelection != "paper") || (playerSelection != "scissors")) {
-                     if (confirm("That is an invalid option! Press OK to try again otherwise we will default to Rock")) {
-                        playerSelection = playerPlay(prompt("Rock, Paper, or Scissors? (r, p, or s are also acceptable!)"))
-                     } else {
-                        playerSelection = "rock"
-                     }
-                }
-                return playerSelection
-            }
-            //get computer choice
-            function computerPlay() {
-                return choices[Math.floor(Math.random() * choices.length)]
-            }
-            //run a round, calls all other functions
-            function playRound () {
-                playerChoice = playerPlay(prompt("Rock, Paper, or Scissors? (r, p, or s are also acceptable!)"))
-                computerChoice = computerPlay()
-                if (((playerChoice == "rock") && (computerChoice == "scissors")) || ((playerChoice == "paper") && (computerChoice == "rock")) || ((playerChoice == "scissors") && (computerChoice == "paper"))) {
-                    playerScore += 1
-                     if (confirm("Computer Throws: " + computerChoice + "; You Threw: " + playerChoice + "; Player Wins! Click OK to play again! Player: " + playerScore + "; Computer: " + computerScore)) {
-                        playRound()
-                    } else {
-                        alert("Thank you for playing!")
-                    }
-                } else if (((computerChoice == "rock") && (playerChoice == "scissors")) || ((computerChoice == "paper") && (playerChoice == "rock")) || ((computerChoice == "scissors") && (playerChoice == "paper"))) {
-                    computerScore += 1
-                    if (confirm("Computer Throws: " + computerChoice + "; You Threw: " + playerChoice + "; Computer Wins! Click OK to play again! Player: " + playerScore + "; Computer: " + computerScore)) {
-                        playRound()
-                    } else {
-                        alert("Thank you for playing!")
-                    }
-                } else {
-                    if (confirm("Computer Throws: " + computerChoice + "; You Threw: " + playerChoice + "; It was a tie! Click OK to play again! Player: " + playerScore + "; Computer: " + computerScore)) {
-                        playRound()
-                    } else {
-                        alert("Thank you for playing!")
-                    }
-                }
-            }
+        <div id="center">
+            <h1>Rock, Paper, Scissors!</h1>
+            <br>
+            <button data-play="rock">Rock</button>
+            <button data-play="paper">Paper</button>
+            <button data-play="scissors">Scissors</button>
+            <br>
+            <br>
+            <p id="player">Player: 0</p>
+            <p id="computer">Computer: 0</p>
+        </div>
 
-            playRound()
-
-        </script>
+        <script src="main.js"></script>
     </body>
 </html>
